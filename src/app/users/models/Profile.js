@@ -4,10 +4,10 @@ import Database from '../../../database/Database';
 class Profile {
 
 	constructor() {
-		this.table = 'tableapplicants';
+		this.table = 'profile';
 		this.user = Database;
 	}
-	
+
 	findById(id) {
 		return this
 			.user
