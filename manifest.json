@@ -1,0 +1,40 @@
+{
+  "server": {
+    "app": {
+      "slogan": "We push the web forward"
+    }
+  },
+  "connections": [
+    {
+      "port": 8000,
+      "labels": ["main"]
+    }
+  ],
+  "registrations" : [
+  	{
+  		"plugin": "./jwt"
+  	},
+  	{
+  		"plugin": {
+  			"register" : "./main"
+  		},
+  		"options" : {
+  			"select" :["main"],
+  			"routes" : {
+  				"prefix" : "/api/v1/main"
+  			}
+  		}
+  	},
+  	{
+  		"plugin": {
+  			"register" : "./auth"
+  		},
+  		"options" : {
+  			"select" :["main"],
+  			"routes" : {
+				"prefix" : "/api/v1/auth"
+  			}
+  		}
+  	}
+  ]
+}
